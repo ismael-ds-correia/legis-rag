@@ -2,8 +2,6 @@
 
 Pipeline de Engenharia de Dados + RAG sobre proposições da Câmara dos Deputados, com ingestão histórica, atualização incremental e interface de consulta em Streamlit.
 
-> **Status:** Fase 0 concluída (escopo definido). Implementação em andamento.
-
 ---
 
 ## 1. Problema
@@ -43,8 +41,6 @@ A coleta filtra exatamente pelos três tipos e pelo período acima. Não será b
 | LLM | Ollama (local) e Groq (API) | Provedor intercambiável via `LLMProvider` |
 | Interface | Streamlit | Demonstração rápida e filtros |
 | Containers | Docker Compose | Ambiente reprodutível |
-
-Restrições de ambiente: máquina com 8 GB de RAM, então paralelismo baixo no Airflow e Ollama rodando fora do Compose.
 
 ```
 Câmara dos Deputados (API + arquivos)
