@@ -16,3 +16,9 @@ if [ -n "$POSTGRES_MULTIPLE_DATABASES" ]; then
 	done
 	echo "Multiple databases created"
 fi
+
+if [ -f /docker-entrypoint-initdb.d/schema.sql ]; then
+    echo "Aplicando schema.sql no banco 'camara_db'..."
+    psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "camara_db" -f /docker-entrypoint-initdb.d/schema.sql
+    echo "Schema aplicado com sucesso!"
+fi
